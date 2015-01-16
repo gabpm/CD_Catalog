@@ -1,37 +1,33 @@
 <html>
-<h2><strong>Resume</strong></h2>
+<h2><strong>CD Catalog</strong></h2>
 
 <body>
-<p>Here are all the places you hated working</p>
+<p>Here is your catalog list</p>
 
 </ul>
 <% @jobs.each() do |job| %>
 <li>
-  <p>You worked for the company <%= job.employer() %> as a <%= job.jobname() %> doing things like <%= job.description() %> for <%= job.yearsworked() %></p></li>
+  <p>Artist: <%= job.employer() %> as a <%= job.jobname() %> doing things like <%= job.description() %> for <%= job.yearsworked() %></p></li>
   <% end %>
   </ul>
 
 <form action="/clear"><button type="submit" class="btn btn-danger">Clear</button>
 </form>
-  <form action="/jobs" method="post" class="form-horizontal">
+  <form action="/cd_list" method="post" class="form-horizontal">
 
-  <p class="text-muted">Describe the horror:</p>
-  <label for="description"></label>
-  <input id="description" name="description" type="text">
+  <p class="text-muted">Enter the name of the artist:</p>
+  <label for="artist"></label>
+  <input id="artist" name="artist" type="text">
 
-  <p class="text-muted">Ungreatful Employer</p>
-  <label for="employer"> </label>
-  <input id="employer" name="employer" type="text">
+  <p class="text-muted">Enter the name of the album:</p>
+  <label for="album"> </label>
+  <input id="album" name="album" type="text">
 
-  <p class="text-muted">Job Position</p>
-  <label for="jobname"></label>
-  <input id="jobname" name="jobname" type="text">
+  <p class="text-muted">Search</p>
+  <label for="search"></label>
+  <input id="search" name="search" type="text">
 
-  <p class="text-muted">Amount of time you wasted there:</p>
-  <label for="yearsworked"></label>
-  <input id="yearsworked" name="yearsworked" type="text">
-
-  <button type="submit" class="btn btn-danger">Add</button>
+  <button type="submit" class="btn btn-danger">Catalog</button>
   </form>
 </form>
 </body>
